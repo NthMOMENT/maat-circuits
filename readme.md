@@ -139,7 +139,7 @@ maat-circuits/
 
 ## Part of the NTH MOMENT ZK Stack
 
-- [theprover](https://github.com/NthMOMENT/theprover) — Python ZK proving harness
+- [theprover](https://github.com/NthMOMENT/theprover) — Python ZK proving harness (to be released soon)
 - [risc-zero-merkle-proofs](https://github.com/NthMOMENT/risc-zero-merkle-proofs) — Merkle membership benchmarks
 - maat-circuits — this repo, universal ZK financial compliance primitives
 
