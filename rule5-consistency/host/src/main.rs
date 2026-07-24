@@ -1,6 +1,6 @@
 use anyhow::Result;
 use methods::CONSISTENCY_GUEST_ELF;
-use risc0_zkvm::{default_prover, ExecutorEnv};
+use risc0_zkvm::{ExecutorEnv, ExternalProver};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
@@ -39,7 +39,7 @@ fn prove_consistency(
     };
 
     let env = ExecutorEnv::builder().write(&input)?.build()?;
-    let prover = default_prover();
+    let prover = ExternalProver::new("gpu", "/home/rammint/.cargo/bin/r0vm");
     let receipt = prover.prove(env, CONSISTENCY_GUEST_ELF)?.receipt;
     receipt.verify(methods::CONSISTENCY_GUEST_ID)?;
     let output: ConsistencyOutput = receipt.journal.decode()?;

@@ -1,6 +1,6 @@
 use anyhow::Result;
 use methods::UNIQUENESS_GUEST_ELF;
-use risc0_zkvm::{default_prover, ExecutorEnv};
+use risc0_zkvm::{ExecutorEnv, ExternalProver};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
@@ -55,7 +55,7 @@ fn main() -> Result<()> {
     // ── Prove ────────────────────────────────────────────────────────────────
     println!("Generating ZK proof...");
     let env = ExecutorEnv::builder().write(&input)?.build()?;
-    let prover = default_prover();
+    let prover = ExternalProver::new("gpu", "/home/rammint/.cargo/bin/r0vm");
     let receipt = prover.prove(env, UNIQUENESS_GUEST_ELF)?.receipt;
 
     // ── Verify ───────────────────────────────────────────────────────────────

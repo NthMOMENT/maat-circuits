@@ -1,6 +1,6 @@
 use anyhow::Result;
 use methods::RANGE_GUEST_ELF;
-use risc0_zkvm::{default_prover, ExecutorEnv};
+use risc0_zkvm::{ExecutorEnv, ExternalProver};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
@@ -28,7 +28,7 @@ fn prove_range(label: &str, value: u64, min: u64, max: u64) -> Result<RangeOutpu
     };
 
     let env = ExecutorEnv::builder().write(&input)?.build()?;
-    let prover = default_prover();
+    let prover = ExternalProver::new("gpu", "/home/rammint/.cargo/bin/r0vm");
     let receipt = prover.prove(env, RANGE_GUEST_ELF)?.receipt;
     receipt.verify(methods::RANGE_GUEST_ID)?;
     let output: RangeOutput = receipt.journal.decode()?;
