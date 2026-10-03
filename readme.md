@@ -170,4 +170,4 @@ Compliance rulesets (assembled rule logic per asset class and jurisdiction) are 
 
 ---
 
-*Built by [GhostProver](https://x.com/0xfourier) · NTH MOMENT · DUNS 772435720*
+*Built by [MAAT](https://x.com/maat_xyz) · NTH MOMENT · DUNS 772435720*
