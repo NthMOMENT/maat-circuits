@@ -166,7 +166,7 @@ The circuits in this repository run on real hardware. Independent proving benchm
 
 Primitives: MIT the math is open. Build on it.
 
-Compliance rulesets (assembled rule logic per asset class and jurisdiction) are proprietary to NTH MOMENT. Contact [@0xfourier](https://x.com/0xfourier) for licensing.
+Compliance rulesets (assembled rule logic per asset class and jurisdiction) are proprietary to NTH MOMENT. Contact [@maat_xyz](https://x.com/maat_xyz) for licensing.
 
 ---
 
